@@ -8,16 +8,16 @@ export default function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null)
 
   const skills = [
-    { name: "HTML/CSS", level: 90, icon: <FileCode2 className="h-5 w-5" /> },
-    { name: "JavaScript", level: 85, icon: <Braces className="h-5 w-5" /> },
-    { name: "TypeScript", level: 80, icon: <Code2 className="h-5 w-5" /> },
-    { name: "React", level: 85, icon: <Layers className="h-5 w-5" /> },
-    { name: "Next.js", level: 75, icon: <Server className="h-5 w-5" /> },
-    { name: "Tailwind CSS", level: 90, icon: <Palette className="h-5 w-5" /> },
-    { name: "Node.js", level: 70, icon: <Server className="h-5 w-5" /> },
+    { name: "HTML/CSS", level: 40, icon: <FileCode2 className="h-5 w-5" /> },
+    { name: "JavaScript", level: 75, icon: <Braces className="h-5 w-5" /> },
+    { name: "TypeScript", level: 70, icon: <Code2 className="h-5 w-5" /> },
+    { name: "React", level: 75, icon: <Layers className="h-5 w-5" /> },
+    { name: "Bootsrap CSS", level: 50, icon: <Server className="h-5 w-5" /> },
+    { name: "Tailwind CSS", level: 40, icon: <Palette className="h-5 w-5" /> },
+    { name: "Node.js", level: 65, icon: <Server className="h-5 w-5" /> },
     { name: "SQL/NoSQL", level: 65, icon: <Database className="h-5 w-5" /> },
-    { name: "UI/UX Design", level: 75, icon: <LayoutGrid className="h-5 w-5" /> },
-    { name: "Responsive Design", level: 85, icon: <Smartphone className="h-5 w-5" /> },
+    { name: "C#", level: 75, icon: <LayoutGrid className="h-5 w-5" /> },
+    { name: "PHP", level: 65, icon: <Smartphone className="h-5 w-5" /> },
   ]
 
   const categories = [

@@ -46,9 +46,9 @@ export default function Contact() {
   }
 
   const contactItems = [
-    { icon: <AtSign className="h-5 w-5" />, title: "Email", content: "example@email.com" },
-    { icon: <Phone className="h-5 w-5" />, title: "Phone", content: "+1 (123) 456-7890" },
-    { icon: <MapPin className="h-5 w-5" />, title: "Location", content: "City, Country" },
+    { icon: <AtSign className="h-5 w-5" />, title: "Email", content: "robertbarrios456@gmail.com" },
+    { icon: <Phone className="h-5 w-5" />, title: "Phone", content: "09165613851" },
+    { icon: <MapPin className="h-5 w-5" />, title: "Location", content: "Cebu, Philippines" },
   ]
 
   return (

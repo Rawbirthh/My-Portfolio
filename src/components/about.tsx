@@ -104,13 +104,13 @@ export default function About() {
                         </motion.div>
                         <div>
                           <h3 className="font-semibold">Bachelor of Information Technology</h3>
-                          <p className="text-sm text-muted-foreground">University Name • 2020 - Present</p>
+                          <p className="text-sm text-muted-foreground">Asian College of Technology • 2025 - Graduated</p>
                           <p className="mt-1">
-                            Specializing in Software Development with a focus on web technologies and cloud computing.
+                            Specializing in Software Development with a focus on web technologies.
                           </p>
                         </div>
                       </motion.div>
-                      <motion.div
+                      {/* <motion.div
                         className="flex gap-4 items-start"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -130,7 +130,8 @@ export default function About() {
                             Comprehensive training in modern web development frameworks and best practices.
                           </p>
                         </div>
-                      </motion.div>
+                        
+                      </motion.div> */}
                     </div>
                   </CardContent>
                 </Card>

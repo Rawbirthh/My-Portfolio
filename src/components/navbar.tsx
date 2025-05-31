@@ -51,7 +51,7 @@ export default function Navbar() {
           <Link to="/" className="font-bold text-2xl">
             <span className="sr-only">Portfolio Home</span>
             <span className="flex items-center gap-1">
-              <span className="text-primary animated-gradient-text">Dev</span>
+              <span className="text-primary animated-gradient-text">Robert</span>
               <span className="text-secondary animated-gradient-text">Portfolio</span>
             </span>
           </Link>
@@ -67,7 +67,9 @@ export default function Navbar() {
                whileHover={{ y: -2 }}
              >
                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                 <Link to={item.href}>{item.name}</Link>
+               <a href={item.href} className={navigationMenuTriggerStyle()}>
+  {item.name}
+</a>
                </NavigationMenuLink>
              </motion.div>
            </NavigationMenuItem>
@@ -75,14 +77,14 @@ export default function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
         <div className="flex items-center gap-2">
-          <ModeToggle />
+          {/* <ModeToggle /> */}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <Button
+          {/* <Button
   variant="default"
   className="hidden md:flex bg-gradient-to-r from-violet-500 to-purple-600 text-white px-4 py-2 rounded-md"
 >
   Download CV
-</Button>
+</Button> */}
 
 
           </motion.div>

@@ -94,7 +94,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Button
+              {/* <Button
                 size="lg"
                 className="bg-primary text-primary-foreground group"
                 whileHover={{ scale: 1.05 }}
@@ -110,8 +110,8 @@ export default function Hero() {
                 >
                   <ArrowRight className="h-4 w-4" />
                 </motion.span>
-              </Button>
-              <Button
+              </Button> */}
+              {/* <Button
                 size="lg"
                 variant="outline"
                 whileHover={{ scale: 1.05 }}
@@ -119,7 +119,7 @@ export default function Hero() {
                 as={motion.button}
               >
                 Contact Me
-              </Button>
+              </Button> */}
             </motion.div>
             <motion.div
               className="flex gap-4 mt-4"

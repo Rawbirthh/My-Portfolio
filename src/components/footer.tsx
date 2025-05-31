@@ -21,7 +21,7 @@ export default function Footer() {
           transition={{ duration: 0.5 }}
         >
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            &copy; {new Date().getFullYear()} Portfolio. All rights reserved.
+            &copy; {new Date().getFullYear()} Robert Portfolio. All rights reserved.
           </p>
         </motion.div>
         <motion.div
