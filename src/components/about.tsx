@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Briefcase, GraduationCap, User, Code } from "lucide-react"
+import { Briefcase, GraduationCap, User, Code, ShoppingCart, Handshake,SquareGanttChart, Globe } from "lucide-react"
 import { useState } from "react"
 
 export default function About() {
@@ -57,23 +57,30 @@ export default function About() {
                 initial="hidden"
                 animate={activeTab === "personal" ? "visible" : "hidden"}
               >
-                <Card className="border-primary/20 bg-card/80 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle>Who I Am</CardTitle>
-                    <CardDescription>A bit about myself and my interests</CardDescription>
-                  </CardHeader>
-                  <CardContent className="text-left">
-                    <p className="mb-4">
-                      I'm a passionate Information Technology student with a focus on web development and software
-                      engineering. I love solving complex problems and creating user-friendly applications that make a
-                      difference.
-                    </p>
-                    <p>
-                      When I'm not coding, you can find me exploring new technologies, contributing to open-source
-                      projects, or expanding my knowledge through online courses and tech meetups.
-                    </p>
-                  </CardContent>
-                </Card>
+             <Card className="border-primary/20 bg-card/80 backdrop-blur-sm">
+  <CardHeader>
+    <CardTitle>Who I Am</CardTitle>
+    <CardDescription>A bit about myself and my goals</CardDescription>
+  </CardHeader>
+  <CardContent className="text-left">
+    <p className="mb-4">
+      I’m a recent Information Technology graduate with a growing passion for web development and software engineering.
+      While I’m early in my professional journey, I’ve built several personal projects that have helped me apply and
+      strengthen my skills in full-stack development using the MERN stack and real-time technologies like Socket.IO.
+    </p>
+    <p className="mb-4">
+      I enjoy solving problems through code and continuously improving through hands-on learning, online courses, and
+      collaboration with others. I'm actively seeking entry-level opportunities where I can contribute, grow, and learn
+      from experienced teams.
+    </p>
+    <p>
+      Outside of coding, I’m curious about emerging tech, open-source communities, and building software that
+      positively impacts people’s lives.
+    </p>
+  </CardContent>
+</Card>
+
+
               </motion.div>
             </TabsContent>
             <TabsContent value="education" className="mt-6 space-y-4">
@@ -145,7 +152,7 @@ export default function About() {
               >
                 <Card className="border-primary/20 bg-card/80 backdrop-blur-sm">
                   <CardHeader>
-                    <CardTitle>Work Experience</CardTitle>
+                    <CardTitle>Work Experience | Projects</CardTitle>
                     <CardDescription>My professional journey</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -161,16 +168,17 @@ export default function About() {
                           whileHover={{ rotate: 360 }}
                           transition={{ duration: 0.5 }}
                         >
-                          <Briefcase className="h-5 w-5 text-primary" />
+                          <SquareGanttChart className="h-5 w-5 text-primary" />
                         </motion.div>
-                        <div>
-                          <h3 className="font-semibold">Web Development Intern</h3>
-                          <p className="text-sm text-muted-foreground">Company Name • Summer 2023</p>
-                          <p className="mt-1">
-                            Assisted in developing responsive web applications using React and Next.js. Collaborated
-                            with senior developers on client projects.
-                          </p>
-                        </div>
+                       <div>
+                      <h3 className="font-semibold">Capstone Project – PNA Infohub: Connecting Region Vll Nurses</h3>
+                      <p className="text-sm text-muted-foreground">Lead Developer • Laravel Framework • 2024</p>
+                      <p className="mt-1">
+                        Developed a full-stack web application for managing organizational memberships and conducting secure digital voting.
+                        Implemented user authentication, role-based access control, and real-time vote tallying features.
+                        Focused on usability and reliability to support real-world organizational needs.
+                      </p>
+                    </div>
                       </motion.div>
                       <motion.div
                         className="flex gap-4 items-start"
@@ -183,16 +191,40 @@ export default function About() {
                           whileHover={{ rotate: 360 }}
                           transition={{ duration: 0.5 }}
                         >
-                          <Code className="h-5 w-5 text-secondary" />
+                          <ShoppingCart className="h-5 w-5 text-secondary" />
                         </motion.div>
                         <div>
-                          <h3 className="font-semibold">Freelance Developer</h3>
-                          <p className="text-sm text-muted-foreground">Self-employed • 2022 - Present</p>
-                          <p className="mt-1">
-                            Developed custom websites and applications for small businesses and startups. Focused on
-                            creating accessible and performant user experiences.
-                          </p>
-                        </div>
+                        <h3 className="font-semibold">Simple E-Commerce Web App</h3>
+                        <p className="text-sm text-muted-foreground">Personal Project • MERN Stack • 2024</p>
+                        <p className="mt-1">
+                          Developed a full-stack e-commerce application using the MERN stack (MongoDB, Express.js, React, Node.js).
+                          Implemented key features such as product listings, shopping cart, and checkout functionality.
+                          Integrated <strong>Socket.IO</strong> for real-time notifications (e.g., order updates).
+                        </p>
+                      </div>
+                      </motion.div>
+                      <motion.div
+                        className="flex gap-4 items-start"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                      >
+                        <motion.div
+                          className="bg-secondary/20 p-2 rounded-full"
+                          whileHover={{ rotate: 360 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <Globe className="h-5 w-5 text-secondary" />
+                        </motion.div>
+                         <div>
+                        <h3 className="font-semibold">Simple Social Media App</h3>
+                        <p className="text-sm text-muted-foreground">Personal Project • MERN Stack • 2024</p>
+                        <p className="mt-1">
+                          Built a full-featured social media application with user registration, post creation, likes, and comments.
+                          Utilized the <strong>MERN stack</strong> and integrated <strong>Socket.IO</strong> for real-time chat and user notifications.
+                          Implemented user authentication, profile pages, and dynamic news feed updates.
+                        </p>
+                      </div>
                       </motion.div>
                     </div>
                   </CardContent>

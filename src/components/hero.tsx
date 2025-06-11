@@ -72,22 +72,30 @@ export default function Hero() {
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
-              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none animated-gradient-text">
-                  IT Student & Developer
-                </h1>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  Building the future through code. Passionate about web development, software engineering, and creating
-                  innovative solutions.
-                </p>
-              </motion.div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none animated-gradient-text">
+                Web Developer & IT Graduate
+              </h1>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                Turning ideas into web applications. Passionate about full-stack development, real-time features, and building
+                scalable, user-friendly solutions with modern technologies.
+              </p>
+              <p className="mt-3 max-w-[600px] text-muted-foreground md:text-xl">
+                Actively seeking junior web developer roles where I can grow, contribute, and learn in a collaborative environment.
+                Let’s build something impactful together.
+              </p>
+            </motion.div>
+          </div>
             <motion.div
               className="flex flex-col gap-2 min-[400px]:flex-row"
               initial={{ opacity: 0, y: 20 }}

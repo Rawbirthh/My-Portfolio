@@ -107,7 +107,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {filters.map((filter) => (
+          {/* {filters.map((filter) => (
             <motion.div key={filter} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant={activeFilter === filter ? "default" : "outline"}
@@ -118,7 +118,7 @@ export default function Projects() {
                 {filter}
               </Button>
             </motion.div>
-          ))}
+          ))} */}
         </motion.div>
 
         <motion.div
@@ -192,7 +192,7 @@ export default function Projects() {
           )}
         </motion.div>
 
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button variant="outline" size="lg" className="group">
               View All Projects
@@ -205,7 +205,7 @@ export default function Projects() {
               </motion.span>
             </Button>
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
