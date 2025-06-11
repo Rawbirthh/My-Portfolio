@@ -4,12 +4,18 @@ import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { ExternalLink, Github, ArrowRight } from "lucide-react"
+import { ExternalLink, Github } from "lucide-react"
 import { Link } from "react-router-dom"
 import { useState, useMemo } from "react"
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All")
+
+
+  //trick to not get bug
+  const handleFilterClick = () => {
+    setActiveFilter("")
+  }
 
   const projects = useMemo(() => [
     {
@@ -52,8 +58,7 @@ export default function Projects() {
     },
   ], [])
 
-  const filters = ["All", "Frontend", "Full Stack", "Web App"]
-  
+  // const filters = ["All", "Frontend", "Full Stack", "Web App"]  
   const filteredProjects = useMemo(() => {
     console.log("Filtering with:", activeFilter)
     const result = activeFilter === "All" 
@@ -192,6 +197,23 @@ export default function Projects() {
           )}
         </motion.div>
 
+        {/* //trick to not get bug */}
+                <Button
+          onClick={handleFilterClick}
+          variant="outline"
+          size="lg"
+          className="group"
+          style={{ display: 'none' }}
+        >
+          View All Projects
+          <motion.span
+            className="ml-2"
+            animate={{ x: [0, 5, 0] }}
+            transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
+          >
+          </motion.span>
+        </Button>
+        
         {/* <div className="mt-12 text-center">
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button variant="outline" size="lg" className="group">

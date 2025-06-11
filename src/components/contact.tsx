@@ -9,8 +9,18 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
 import { AtSign, MapPin, Phone, Send } from "lucide-react"
+import emailjs from "@emailjs/browser"
 
 export default function Contact() {
+
+  // service id = service_gnb0kyb
+  // template id = template_91e1eya
+  //public key = T4izaii19YvX1ccLo
+
+  const SERVICE_ID = 'service_gnb0kyb';
+const TEMPLATE_ID = 'template_91e1eya';
+const PUBLIC_KEY = 'T4izaii19YvX1ccLo';
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,13 +49,22 @@ const formattedDate = now.toLocaleString('en-US', options);
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        PUBLIC_KEY
+      );
+  
       toast("Message Sent!", {
         description: formattedDate,
       });
@@ -54,10 +73,15 @@ const formattedDate = now.toLocaleString('en-US', options);
         email: "",
         subject: "",
         message: "",
-      })
-    }, 1500)
-
-  }
+      });
+    } catch (error) {
+      toast("Failed to send message", {
+        description: "Please try again later",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const contactItems = [
     { icon: <AtSign className="h-5 w-5" />, title: "Email", content: "robertbarrios456@gmail.com" },
