@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -7,7 +6,6 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { ModeToggle } from "./mode-toggle"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useEffect, useState } from "react"
 

@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { ExternalLink, Github, ArrowRight } from "lucide-react"
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All")
 
-  const projects = [
+  const projects = useMemo(() => [
     {
       title: "E-Commerce Platform",
       description:
@@ -50,13 +50,19 @@ export default function Projects() {
       github: "#",
       demo: "#",
     },
-  ]
+  ], [])
 
-  const filters = ["All", "Frontend", "Full Stack", "Web App", "Mobile"]
+  const filters = ["All", "Frontend", "Full Stack", "Web App"]
   
-
-  const filteredProjects =
-    activeFilter === "All" ? projects : projects.filter((project) => project.category === activeFilter)
+  const filteredProjects = useMemo(() => {
+    console.log("Filtering with:", activeFilter)
+    const result = activeFilter === "All" 
+      ? projects 
+      : projects.filter((project) => project.category.toLowerCase() === activeFilter.toLowerCase())
+    console.log("Filtered result:", result)
+    return result
+  }, [activeFilter, projects])
+  
 
   const container = {
     hidden: { opacity: 0 },
@@ -122,62 +128,68 @@ export default function Projects() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={item}
-              className="group"
-              whileHover={{ y: -10 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/50 h-full flex flex-col bg-card/80 backdrop-blur-sm">
-                <motion.div className="overflow-hidden" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    width={500}
-                    height={300}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </motion.div>
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {project.tags.map((tag) => (
-                      <Badge
-                        key={tag}
-                        variant="secondary"
-                        className="bg-secondary/20 text-secondary hover:bg-secondary/30"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex justify-between">
-                  <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                    <Button variant="outline" size="sm" asChild>
-                      <Link to={project.github}>
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
-                      </Link>
-                    </Button>
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                className="group"
+                whileHover={{ y: -10 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:border-primary/50 h-full flex flex-col bg-card/80 backdrop-blur-sm">
+                  <motion.div className="overflow-hidden" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+                    <img
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      width={500}
+                      height={300}
+                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </motion.div>
-                  <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                    <Button size="sm" asChild>
-                      <Link to={project.demo}>
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
-                      </Link>
-                    </Button>
-                  </motion.div>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
+                  <CardHeader>
+                    <CardTitle>{project.title}</CardTitle>
+                    <CardDescription>{project.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {project.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="secondary"
+                          className="bg-secondary/20 text-secondary hover:bg-secondary/30"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                  <CardFooter className="flex justify-between">
+                    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                      <Button variant="outline" size="sm" asChild>
+                        <Link to={project.github}>
+                          <Github className="mr-2 h-4 w-4" />
+                          Code
+                        </Link>
+                      </Button>
+                    </motion.div>
+                    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                      <Button size="sm" asChild>
+                        <Link to={project.demo}>
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Live Demo
+                        </Link>
+                      </Button>
+                    </motion.div>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))
+          ) : (
+            <div className="col-span-full text-center py-8">
+              <p className="text-muted-foreground">No projects found for this filter.</p>
+            </div>
+          )}
         </motion.div>
 
         <div className="mt-12 text-center">

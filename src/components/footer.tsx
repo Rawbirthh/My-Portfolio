@@ -30,14 +30,14 @@ export default function Footer() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          {socialLinks.map((link, index) => (
+          {socialLinks.map((link) => (
             <motion.div
               key={link.label}
               whileHover={{ y: -5, scale: 1.2 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.1 * index }}
+              // transition={{ duration: 0.3, delay: 0.1 * index }}
             >
               <Link
                 to={link.href}

@@ -73,7 +73,7 @@ export default function Skills() {
           whileInView="show"
           viewport={{ once: true }}
         >
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <motion.div
               key={category.name}
               variants={item}

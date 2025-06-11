@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
+
 import { motion, useAnimation } from "framer-motion"
-import { ArrowRight, Code, Github, Linkedin, Twitter } from "lucide-react"
+import { Code, Github, Linkedin, Twitter } from "lucide-react"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 
@@ -128,17 +128,17 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               {[
-                { icon: <Github className="h-6 w-6" />, label: "GitHub" },
-                { icon: <Linkedin className="h-6 w-6" />, label: "LinkedIn" },
-                { icon: <Twitter className="h-6 w-6" />, label: "Twitter" },
-                { icon: <Code className="h-6 w-6" />, label: "Portfolio" },
+                { icon: <Github className="h-6 w-6" />, label: "GitHub", href: "https://github.com/Rawbirthh" },
+                { icon: <Linkedin className="h-6 w-6" />, label: "LinkedIn", href: "https://www.linkedin.com/in/robert-barrios-36a974328/" },
+                // { icon: <Twitter className="h-6 w-6" />, label: "Twitter" },
+                { icon: <Code className="h-6 w-6" />, label: "Portfolio", href: "" },
               ].map((item, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ y: -5, scale: 1.2 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  <Link to="#" className="text-muted-foreground hover:text-primary">
+                  <Link to={item.href ?? ''} className="text-muted-foreground hover:text-primary">
                     {item.icon}
                     <span className="sr-only">{item.label}</span>
                   </Link>

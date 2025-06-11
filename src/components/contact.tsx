@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Toaster } from "@/components/ui/sonner"
+import { toast } from "sonner"
 import { AtSign, MapPin, Phone, Send } from "lucide-react"
 
 export default function Contact() {
@@ -18,6 +18,20 @@ export default function Contact() {
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const now = new Date();
+const options = { 
+  weekday: 'long', 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  hour12: true 
+} as const;
+const formattedDate = now.toLocaleString('en-US', options);
+
+
 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,10 +46,9 @@ export default function Contact() {
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false)
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      })
+      toast("Message Sent!", {
+        description: formattedDate,
+      });
       setFormData({
         name: "",
         email: "",
@@ -43,6 +56,7 @@ export default function Contact() {
         message: "",
       })
     }, 1500)
+
   }
 
   const contactItems = [
