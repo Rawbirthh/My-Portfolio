@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Briefcase, GraduationCap, User, Code, ShoppingCart, Handshake,SquareGanttChart, Globe } from "lucide-react"
+import { Briefcase, GraduationCap, User, ShoppingCart,SquareGanttChart, Globe } from "lucide-react"
 import { useState } from "react"
 
 export default function About() {

@@ -23,9 +23,8 @@ export default function Skills() {
   const categories = [
     { name: "Frontend", color: "bg-[#891fb2] text-primary-foreground" },
     { name: "Backend", color: "bg-[#f61e42] text-secondary-foreground" },
-    { name: "Design", color: "bg-[#5cb8cd] text-accent-foreground" },
-    { name: "Mobile", color: "bg-[#dc3c11] text-destructive-foreground" },
-    { name: "DevOps", color: "bg-[#891fb2] text-muted-foreground" },
+    { name: "Api", color: "bg-[#5cb8cd] text-accent-foreground" },
+    { name: "Database", color: "bg-[#dc3c11] text-destructive-foreground" },
   ]
 
   const container = {

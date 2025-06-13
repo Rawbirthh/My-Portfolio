@@ -4,8 +4,24 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { motion, type HTMLMotionProps } from "framer-motion"
 
 import { cn } from "@/lib/utils"
-interface ButtonProps extends React.ComponentProps<"button">, 
-  VariantProps<typeof buttonVariants> {
+
+// Omit native animation and drag event handlers from button props to avoid conflict with framer-motion props
+type ConflictingEventProps =
+  | "onAnimationStart"
+  | "onAnimationEnd"
+  | "onAnimationIteration"
+  | "onDragStart"
+  | "onDragEnd"
+  | "onDrag"
+  | "onDragEnter"
+  | "onDragExit"
+  | "onDragLeave"
+  | "onDragOver"
+  | "onDrop"
+
+interface ButtonProps
+  extends Omit<React.ComponentProps<"button">, ConflictingEventProps>,
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean
   motionProps?: HTMLMotionProps<"button">
 }
@@ -49,12 +65,20 @@ function Button({
   motionProps,
   ...props
 }: ButtonProps) {
-  const Comp = asChild ? Slot : motion.button
+  const classes = cn(buttonVariants({ variant, size, className }))
+
+  if (asChild) {
+    return (
+      <Slot data-slot="button" className={classes}>
+        {props.children}
+      </Slot>
+    )
+  }
 
   return (
-    <Comp
+    <motion.button
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={classes}
       {...motionProps}
       {...props}
     />
