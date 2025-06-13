@@ -8,6 +8,7 @@ import { ExternalLink, Github } from "lucide-react"
 import { Link } from "react-router-dom"
 import { useState, useMemo } from "react"
 
+
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("All")
 
@@ -19,42 +20,44 @@ export default function Projects() {
 
   const projects = useMemo(() => [
     {
-      title: "E-Commerce Platform",
+      title: "PNA Infohub: Connecting Region VII Nurses",
       description:
-        "A full-stack e-commerce platform with user authentication, product management, and payment integration.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
+        "A membership and voting system built to support Region VII nurses. Features include member registration, authentication, role-based access, and secure online voting.",
+      image: "https://scontent.fceb3-1.fna.fbcdn.net/v/t1.15752-9/506661764_1242682544104651_6020578531168662624_n.png?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEisYpLFNNGnMjGRB_C4oLN_QStYmN38_T9BK1iY3fz9FiNWD2xO9W78-8-UYfFsA1oRk8LmKdXR0eIBg8jT0hF&_nc_ohc=ApIMw9hvMbsQ7kNvwFKumdd&_nc_oc=AdmwCWRU_l7NrJhD7nb0fE_3iLaxEXgBCd3fY8bI-is0HkBDGnlu2hC00shpV1Qvn3E&_nc_zt=23&_nc_ht=scontent.fceb3-1.fna&oh=03_Q7cD2gFZqePxxqyYQ6PxBc9QLNHIxaa5XmIu5qsNjK6clBpxPQ&oe=68738D91",
+      tags: ["Laravel", "MySQL", "PHP", "Authentication"],
+      category: "Web Application",
+      github: "#",
+      demo: "No demo because it is not deployed",
+    },
+    {
+      title: "Simple E-Commerce App",
+      description:
+        "A simple-featured e-commerce platform built with the MERN stack. Includes product browsing, shopping cart, user authentication, and real-time order updates using Socket.io.",
+      image: "https://scontent.fceb3-1.fna.fbcdn.net/v/t1.15752-9/494828293_721718923872888_2888695496328998181_n.png?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEM_nWI8xbiDjKKoq70h2N1PHKZXsyEP6w8cplezIQ_rPv5CuxM19IkhomykDO592qOXV7WeeDpw_M-fR-yL8X5&_nc_ohc=KdMCedQbeYAQ7kNvwF8YN34&_nc_oc=Adm_3PDYVmXEbJwL50IxCh0l0lYNLVAAstMMR73m8onDZM28bu8szpa4PPGU5CmyT5A&_nc_zt=23&_nc_ht=scontent.fceb3-1.fna&oh=03_Q7cD2gHmGnoa_BU5_yS5R1FaHiF4vYnMjXJlkklGI3H6vVHH5w&oe=687379CC",
+      tags: ["MongoDB", "Express", "React", "Node.js", "Socket.io"],
       category: "Full Stack",
       github: "#",
-      demo: "#",
-    },
+      demo: "https://mern-typescript-app.vercel.app/",
+    },    
     {
-      title: "Task Management App",
+      title: "Simple Social Media App",
       description:
-        "A collaborative task management application with real-time updates and team collaboration features.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["Next.js", "TypeScript", "Prisma", "Socket.io"],
-      category: "Web App",
+        "A social media app where users can post, like, comment, follow others, and edit their profiles. It also supports real-time chat.",
+      image: "https://scontent.fceb3-1.fna.fbcdn.net/v/t1.15752-9/494362433_1411629503317639_4405800129142194589_n.png?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGiV4m1MD7o5vSw2u0IL-ApMkMoJlUDmIkyQygmVQOYiaKcQFrNHVTNlJucomBbbtM-6mV-QOw_TXdGeacQBUAU&_nc_ohc=cAfp96acbn4Q7kNvwGO2_fy&_nc_oc=AdmwVLuaa4_Emb8teglKUHMTsTpDhO_fvGT0uE6sJ6lutMsr2yGxoQtQN39YCRi4KFo&_nc_zt=23&_nc_ht=scontent.fceb3-1.fna&oh=03_Q7cD2gHIw0wriqEdny3sMoVjqCCygtoeqCZvg1QYNHfo8tHqww&oe=6873A066",
+      tags: ["MongoDB", "Express", "React", "Node.js", "Socket.io", "Tailwind CSS"],
+      category: "Full Stack",
       github: "#",
-      demo: "#",
+      demo: "https://social-media-repo.vercel.app/",
     },
+    
     {
-      title: "Portfolio Website",
+      title: "My Portfolio",
       description: "A responsive portfolio website showcasing projects and skills with a modern design.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "https://scontent.fceb3-1.fna.fbcdn.net/v/t1.15752-9/495271400_1426142288727770_24809410619547683_n.png?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGYeEjA5FyljWCPggcpDlRJOV9ruH_E4NM5X2u4f8Tg0wOR1kA2G25WwWQ0KXPriJJtJ0mh9gU0h44Ts89ev8SY&_nc_ohc=3YvPacy65xAQ7kNvwFzOX6d&_nc_oc=AdldWVpscZRQ0_HJmK2iymcPrDFLo1cSEeWZW1CJkUlamWQ7cif7C3j__CmZG37F0-0&_nc_zt=23&_nc_ht=scontent.fceb3-1.fna&oh=03_Q7cD2gEaloJ43MhHB4BwH-9_LQHfkt0KngPNAn30WMfJd_jvRg&oe=68738C9D",
       tags: ["React", "Tailwind CSS", "Framer Motion"],
       category: "Frontend",
       github: "#",
-      demo: "#",
-    },
-    {
-      title: "Weather Dashboard",
-      description: "A weather dashboard that displays current and forecasted weather data for multiple locations.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["JavaScript", "API Integration", "Chart.js"],
-      category: "Frontend",
-      github: "#",
-      demo: "#",
+      demo: "https://social-media-repo.vercel.app/",
     },
   ], [])
 

@@ -4,11 +4,9 @@ import { motion } from "framer-motion"
 
 export default function Footer() {
   const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, label: "GitHub", href: "#" },
-    { icon: <Twitter className="h-5 w-5" />, label: "Twitter", href: "#" },
-    { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", href: "#" },
+    { icon: <Github className="h-5 w-5" />, label: "GitHub", href: "https://github.com/Rawbirthh" },
+    { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", href: "https://www.linkedin.com/in/robert-barrios-36a974328/" },
     { icon: <Instagram className="h-5 w-5" />, label: "Instagram", href: "#" },
-    { icon: <Mail className="h-5 w-5" />, label: "Email", href: "mailto:example@email.com" },
   ]
 
   return (

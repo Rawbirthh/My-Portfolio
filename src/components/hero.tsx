@@ -1,6 +1,6 @@
 
 import { motion, useAnimation } from "framer-motion"
-import { Code, Github, Linkedin, Twitter } from "lucide-react"
+import { Code, Github, Linkedin } from "lucide-react"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 
@@ -166,7 +166,7 @@ export default function Hero() {
               style={{ transformOrigin: "center center" }}
             >
               <img
-                src="https://cdn-thumbs.ohmyprints.net/1/455d75775ef5930819d77a9219257a74/817x600/thumbnail/fit.jpg"
+                src="https://scontent.fceb3-1.fna.fbcdn.net/v/t1.15752-9/496624757_1532456484382025_3188927877892687600_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeH5iF3o3g6yNs7qh4egPeSh20OuxMGD4ATbQ67EwYPgBL10hzG4TC_kk-sAjaFqP5qdbTEnUtzJdM2QpjIO_RBh&_nc_ohc=v4R3eW_cWWgQ7kNvwFgVokT&_nc_oc=Adlb577_1w0uOGYkf1VMTOjNtXULPJy6InJq7Pf3WIbK18G305zgd99ILNC_amQBxD0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fceb3-1.fna&oh=03_Q7cD2gE5Ui_WZLHqgNsPgKrz9faSlzI8T-sYoEN86BlDT57hlw&oe=68739FB8"
                 alt="Profile"
                 className="rounded-full object-cover"
                 width={400}
