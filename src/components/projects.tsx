@@ -57,7 +57,7 @@ export default function Projects() {
       tags: ["React", "Tailwind CSS", "Framer Motion"],
       category: "Frontend",
       github: "#",
-      demo: "https://social-media-repo.vercel.app/",
+      demo: "https://my-portfolio-eight-liard-37.vercel.app/",
     },
   ], [])
 
